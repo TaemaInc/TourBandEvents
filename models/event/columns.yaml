@@ -1,0 +1,29 @@
+columns:
+    published:
+        labe: Published
+        type: switch
+    venue:
+        label: Venue
+        type: text
+        searchable: true
+        sortable: true
+    datetime:
+        label: Date
+        type: datetime
+        searchable: true
+        sortable: true
+    city:
+        label: City
+        type: text
+        searchable: true
+        sortable: true
+    region:
+        label: Region
+        type: text
+        searchable: true
+        sortable: true
+    country:
+        label: Country
+        type: text
+        searchable: true
+        sortable: true

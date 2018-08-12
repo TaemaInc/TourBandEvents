@@ -1,0 +1,10 @@
+name: Events
+form: $/taema/bandtourevents/models/event/fields.yaml
+modelClass: Taema\BandTourEvents\Models\Event
+defaultRedirect: taema/bandtourevents/events
+create:
+    redirect: 'taema/bandtourevents/events/update/:id'
+    redirectClose: taema/bandtourevents/events
+update:
+    redirect: taema/bandtourevents/events
+    redirectClose: taema/bandtourevents/events

@@ -1,0 +1,11 @@
+plugin:
+    name: 'taema.bandtourevents::lang.plugin.name'
+    description: 'taema.bandtourevents::lang.plugin.description'
+    author: 'Taema Inc.'
+    icon: oc-icon-calendar
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Tour Dates'
+        url: taema/bandtourevents/events
+        icon: icon-calendar

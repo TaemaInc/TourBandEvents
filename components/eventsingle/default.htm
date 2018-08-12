@@ -1,0 +1,33 @@
+{% set event = __SELF__.event %}
+
+<div class="field is-grouped">
+    <p class="control">
+        <a href="{{ event.tickets_url }}" class="button is-primary">
+            <span class="icon">
+                <i class="fas fa-ticket-alt"></i>
+            </span>
+            <span>Buy tickets</span>
+        </a>
+    </p>
+    <p class="control">
+        <a href="{{ event.facebook_url }}" class="button">
+            <span class="icon">
+                <i class="fab fa-facebook-square"></i>
+            </span>
+            <span>Facebook Event</span>
+        </a>
+    </p>
+</div>
+<br>
+<div class="field">
+    <span class="content">
+        {{ event.description | raw }}
+    </span>
+</div>
+
+{% if event.youtube_url is not empty %}
+<br>
+<div class="field has-text-centered">
+    <iframe width="560" height="315" src="{{ event.youtube_url }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+{% endif %}

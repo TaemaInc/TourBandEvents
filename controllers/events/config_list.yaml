@@ -1,0 +1,12 @@
+title: Events
+modelClass: Taema\BandTourEvents\Models\Event
+list: $/taema/bandtourevents/models/event/columns.yaml
+recordUrl: 'taema/bandtourevents/events/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

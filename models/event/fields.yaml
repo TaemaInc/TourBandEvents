@@ -1,0 +1,66 @@
+fields:
+    published:
+        label: Published
+        span: auto
+        default: 1
+        type: switch
+    datetime:
+        label: 'Event date'
+        mode: datetime
+        span: left
+        required: 1
+        type: datepicker
+    venue:
+        label: 'Venue Name'
+        span: auto
+        required: 1
+        type: text
+    name:
+        label: 'Event name'
+        span: auto
+        required: 0
+        type: text
+    description:
+        label: 'Event description'
+        size: ''
+        mode: tab
+        span: left
+        type: markdown
+    city:
+        label: City
+        span: right
+        required: 1
+        type: text
+    region:
+        label: 'Province / State'
+        span: right
+        type: text
+    country:
+        label: Country
+        span: right
+        type: text
+tabs:
+    fields:
+        tickets_url:
+            label: 'Tickets Event Url'
+            span: auto
+            type: text
+            tab: Links
+        facebook_url:
+            label: 'Facebook Event Url'
+            span: auto
+            type: text
+            tab: Links
+        youtube_url:
+            label: 'YouTube Video Preview Url'
+            span: auto
+            type: text
+            tab: Links
+        gallery:
+            label: Relation
+            nameFrom: name
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: Photos
+            emptyOption: 'No photo gallery'

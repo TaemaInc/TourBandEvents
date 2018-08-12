@@ -1,0 +1,42 @@
+{% if __SELF__.events is not empty %}
+<table class="table is-fullwidth is-hoverable">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Venue</th>
+            <th>Location</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for event in __SELF__.events %}
+        <tr>
+            <td>
+                <a href="{{ __SELF__.property('eventPage') | page({ id: event.id }) }}">{{ event.datetime | localizeddate('medium', 'short') }}</a>
+            </td>
+            <td>{{ event.venue }}</td>
+            <td>{{ event.location }}</td>
+            <td>
+                {% if event.tickets_url is not empty %}
+                <a href="{{ event.tickets_url}}" class="icon" title="Get tickets for this event">
+                    <i class="fas fa-ticket-alt"></i>
+                </a>
+                {% endif %}
+                {% if event.facebook_url is not empty %}
+                <a href="{{ event.facebook_url }}" class="icon" title="Go to Facebook event of this event">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                {% endif %}
+                {% if event.youtube_url is not empty %}
+                <a href="{{ event.youtube_url }}" class="icon" title="Go to youtube video of this event">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No events to show</p>
+{% endif %}
