@@ -47,6 +47,22 @@ class Event extends Model
             ->orderBy('datetime', 'desc');
     }
 
+    /**
+     * Tries to extract YouTube video id if a full YouTube url was given
+     *
+     * @param $value
+     */
+    public function setYoutubeUrlAttribute($value)
+    {
+        preg_match(
+            '/(?:https?:)?(?:\/\/)?(?:[0-9A-Z-]+\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\S*?[^\w\s-])([\w-]{11})(?=[^\w-]|$)(?![?=&+%\w.-]*(?:[\'"][^<>]*>|<\/a>))[?=&+%\w.-]*/',
+            $value,
+            $matches
+        );
+
+        $this->attributes['youtube_url'] = (isset($matches[1])) ? $matches[1] : $value;
+    }
+
     public $belongsTo = [
         'gallery' => '\Raviraj\Rjgallery\Models\Gallery'
     ];

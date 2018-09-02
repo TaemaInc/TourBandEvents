@@ -3,3 +3,5 @@
 1.0.2:
     - 'Created table taema_bandtourevents_events'
     - builder_table_create_taema_bandtourevents_events.php
+1.0.3:
+    - 'Display tickets url and facebook url only if not empty'

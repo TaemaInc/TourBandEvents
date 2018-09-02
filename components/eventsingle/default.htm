@@ -1,6 +1,7 @@
 {% set event = __SELF__.event %}
 
 <div class="field is-grouped">
+    {% if event.tickets_url %}
     <p class="control">
         <a href="{{ event.tickets_url }}" class="button is-primary">
             <span class="icon">
@@ -9,6 +10,8 @@
             <span>Buy tickets</span>
         </a>
     </p>
+    {% endif %}
+    {% if event.facebook_url %}
     <p class="control">
         <a href="{{ event.facebook_url }}" class="button">
             <span class="icon">
@@ -17,17 +20,24 @@
             <span>Facebook Event</span>
         </a>
     </p>
+    {% endif %}
 </div>
 <br>
+{% if event.description is not empty %}
 <div class="field">
     <span class="content">
         {{ event.description | raw }}
     </span>
 </div>
+{% else %}
+<div class="notification is-info">
+    No description available
+</div>
+{% endif %}
 
 {% if event.youtube_url is not empty %}
 <br>
 <div class="field has-text-centered">
-    <iframe width="560" height="315" src="{{ event.youtube_url }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ event.youtube_url }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
 {% endif %}
